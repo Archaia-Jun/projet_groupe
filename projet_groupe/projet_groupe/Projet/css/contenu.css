@@ -1,0 +1,36 @@
+body {
+	background-color: #fdeac9 !important;
+}
+
+.content {
+	text-align: justify;
+	margin-top: 10%;
+}
+
+.titre {
+	margin-top: 10%;
+	text-decoration: underline;
+}
+
+.card {
+	background-color: #fdeac9 !important;
+}
+
+.container_2 {
+	text-align: justify;
+	margin-top: 5%;
+}
+
+.container_2 hr {
+	margin-top: 5%;
+}
+
+.infos h2 {
+	font-size: 25px;
+	text-decoration: underline;
+	margin-bottom: 5%;
+}
+
+.page-footer {
+	background-color: white !important;
+}
