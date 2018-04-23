@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+	<title>JqueryUI - Aztec puzzle </title> <!--jqueryui est un complément à jquery -->
+
+	<style type="text/css">
+
+	table{border: 3px solid blue;}
+	.cell{height: 100px; width: 100px;border: 2px dotted gray; text-align: center;}
+	.row{outline: green solid medium; width: 100px; height: 100px;}
+	/**{margin: 10px; padding: 10px;}
+
+	#row {width: 130px; height: 130px; }*/
+
+	#Aztec, #droparea{float: left; width: 70%; padding: 50px;}
+	#Aztec div img{width: 100px; height: 100px;}
+	#Aztec>div, #droparea>div {
+		width: :100px;
+		height: 100px;
+		border: 2px solid black;
+		float: left;
+		border-radius: 5px;
+		text-align: center;
+	}
+
+	#droparea div{line-height: 130px;}
+
+	</style>
+
+
+
+
+<!-- liers à prendre sur https://developers.google.com/speed/libraries/#jquery-ui
+
+ATTENTION l'ordre des scirpts est important-->
+
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/eggplant/jquery-ui.css"><!-- pas nécessairement obligatoire pour cet exercice-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+	<!-- code source : https://jqueryui.com/datepicker
+	<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } ); -->
+
+
+  	<script type="text/javascript">
+  		var AztecArr =
+  		["a.jpeg","b.jpeg","c.jpeg","d.jpeg","e.jpeg","f.jpeg","g.jpeg","h.jpeg","i.jpeg","j.jpeg","k.jpeg","l.jpeg","m.jpeg","n.jpeg","o.jpeg","p.jpeg","q.jpeg","r.jpeg","s.jpeg","t.jpeg"];
+  		var namesArr =
+  		["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t"]
+
+  		$(document).ready(function(){
+  			shuffle(AztecArr);
+  			$.each(AztecArr, function(index,value){
+  				var aztec = value.slice (7,-4); //en fonction du nom du fichier , ex: images/uk.png i=1, /=7
+
+  				$("<div><img src="+value+"></div>").appendTo("#Aztec").draggable({revert:true,scope:aztec});
+  			});
+
+  			shuffle(namesArr);
+  			$.each(namesArr, function(index,value){
+
+  				$("<div>"+value+"</div>").appendTo("#droparea").droppable({scope:value.toLowerCase(),
+  					drop:function(event, ui){
+  						$(ui.draggable).append($(this).text());
+  						$(this).hide("explode", "slow");
+  					}});
+  			});
+  		});
+
+  		function shuffle(arr)
+  		{
+  			return arr.sort(function(){
+  				return 0.5 - Math.random(); //n'ira pas jusqu'à 8 ou 9
+  			});
+  		}
+
+  	//	console.log(shuffle);
+  	</script>
+
+
+</head>
+
+<body>
+
+<div class="col-md-6">
+<div id="droparea">
+	<table id="myTable">
+		<tr id="row1" class="row">
+			<td id="r1c1" class="cell">a</td>
+			<td id="r1c2" class="cell">b</td>
+			<td id="r1c3" class="cell">c</td>
+			<td id="r1c4" class="cell">d</td>
+			<td id="r1c5" class="cell">e</td>
+		</tr>
+		<tr id="row2" class="row">
+			<td id="r2c1" class="cell">f</td>
+			<td id="r2c2" class="cell">g</td>
+			<td id="r2c3" class="cell">h</td>
+			<td id="r2c4" class="cell">i</td>
+			<td id="r2c5" class="cell">j</td>
+		</tr>
+		<tr id="row3" class="row">
+			<td id="r3c1" class="cell">k</td>
+			<td id="r3c2" class="cell">l</td>
+			<td id="r3c3" class="cell">m</td>
+			<td id="r3c4" class="cell">n</td>
+			<td id="r3c5" class="cell">o</td>
+		</tr>
+		<tr id="row4" class="row">
+			<td id="r4c1" class="cell">p</td>
+			<td id="r4c2" class="cell">q</td>
+			<td id="r4c3" class="cell">r</td>
+			<td id="r4c4" class="cell">s</td>
+			<td id="r4c5" class="cell">t</td>
+		</tr>
+	</table> <!-- $ pour 1,2,3,4..-->
+
+</div>
+</div>
+
+<br/>
+
+<div class="col-md-6">
+<div id="Aztec"></div>
+</div>
+
+
+</body>
+
+</html>
