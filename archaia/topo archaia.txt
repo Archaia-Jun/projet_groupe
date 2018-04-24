@@ -1,0 +1,4 @@
+1) Créer les tables (phpMyAdmin): membres, articles et commentaires
+   -Creer une nouvelle table
+2) Faire la connexion entre les formulaires et la base de données (Archaia)
+3) Créer la code php pour login
