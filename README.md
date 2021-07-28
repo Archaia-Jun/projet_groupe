@@ -1,5 +1,10 @@
 # projet_groupe
-Site thématique, Histoire et Cvilisations
+Site dynamique; 
+Thématique: Histoire et Cvilisations.
+Gallerie d'images.
+Gestion de compte.
+Jeux (Puzzle et Quiz).
+
 ![archaia2](https://user-images.githubusercontent.com/37714375/127332181-f26952b8-bae7-4083-a524-a3fdb740e64f.JPG)
 ![archaia3](https://user-images.githubusercontent.com/37714375/127332183-29eb256d-3b22-4050-aed6-f5817e1c9822.JPG)
 ![archaia4](https://user-images.githubusercontent.com/37714375/127332185-45b9b45c-abf7-4b38-bd1d-6ac8d20db14b.JPG)
